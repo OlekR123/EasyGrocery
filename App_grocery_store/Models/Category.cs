@@ -1,0 +1,8 @@
+﻿namespace App_grocery_store.Models
+{
+    public class Category
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+    }
+}

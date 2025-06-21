@@ -1,0 +1,32 @@
+﻿<Window x:Class="App_grocery_store.ProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:App_grocery_store"
+        mc:Ignorable="d"
+        Title="Товар" Height="450" Width="400"
+        Icon="/Pictures/app.ico">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="ArticleTextBox" Grid.Row="0" Margin="0,5" Width="200" Tag="Артикул..." GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Foreground="Gray"/>
+        <TextBox x:Name="NameTextBox" Grid.Row="1" Margin="0,5" Width="200" Tag="Название..." GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Foreground="Gray"/>
+        <ComboBox x:Name="CategoryComboBox" Grid.Row="2" Margin="0,5" Width="200" DisplayMemberPath="name" SelectedValuePath="id"/>
+        <TextBox x:Name="PriceTextBox" Grid.Row="3" Margin="0,5" Width="200" Tag="Цена..." GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Foreground="Gray"/>
+        <TextBox x:Name="StockTextBox" Grid.Row="4" Margin="0,5" Width="200" Tag="Наличие..." GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Foreground="Gray"/>
+        <ComboBox x:Name="SupplierComboBox" Grid.Row="5" Margin="0,5" Width="200" DisplayMemberPath="organization_name" SelectedValuePath="id"/>
+        <TextBox x:Name="ImageUrlTextBox" Grid.Row="6" Margin="0,5" Width="200" Tag="Ссылка..." GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Foreground="Gray"/>
+        <TextBox x:Name="DescriptionTextBox" Grid.Row="7" Margin="0,5" Width="200" Height="80" Tag="Описание..." GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" Foreground="Gray" TextWrapping="Wrap"/>
+        <Button Content="Сохранить" Grid.Row="8" Width="100" Margin="0,10" Click="SaveButton_Click"/>
+    </Grid>
+</Window>
