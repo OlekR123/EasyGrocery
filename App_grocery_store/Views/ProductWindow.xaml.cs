@@ -20,7 +20,6 @@ namespace App_grocery_store
             CategoryComboBox.ItemsSource = _dbService.GetCategories();
             SupplierComboBox.ItemsSource = _dbService.GetSuppliers();
 
-            // Установим начальные подсказки
             ArticleTextBox.Text = ArticleTextBox.Tag.ToString();
             NameTextBox.Text = NameTextBox.Tag.ToString();
             PriceTextBox.Text = PriceTextBox.Tag.ToString();
@@ -71,7 +70,6 @@ namespace App_grocery_store
         {
             try
             {
-                // Проверяем, чтобы пользователь ввёл данные вместо подсказок
                 var article = ArticleTextBox.Text == ArticleTextBox.Tag.ToString() ? string.Empty : ArticleTextBox.Text;
                 var name = NameTextBox.Text == NameTextBox.Tag.ToString() ? string.Empty : NameTextBox.Text;
                 var priceText = PriceTextBox.Text == PriceTextBox.Tag.ToString() ? "0" : PriceTextBox.Text;

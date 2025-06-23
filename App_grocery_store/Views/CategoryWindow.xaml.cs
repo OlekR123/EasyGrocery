@@ -17,7 +17,6 @@ namespace App_grocery_store
             _dbService = dbService;
             _category = category;
 
-            // Установим начальную подсказку
             NameTextBox.Text = NameTextBox.Tag.ToString();
 
             if (_category != null)
@@ -51,7 +50,6 @@ namespace App_grocery_store
         {
             try
             {
-                // Проверяем, чтобы пользователь ввёл данные вместо подсказки
                 var name = NameTextBox.Text == NameTextBox.Tag.ToString() ? string.Empty : NameTextBox.Text;
 
                 var category = new Category

@@ -19,7 +19,6 @@ namespace App_grocery_store
 
             RoleComboBox.ItemsSource = _dbService.GetUserRoles();
 
-            // Установим начальные подсказки
             SurnameTextBox.Text = SurnameTextBox.Tag.ToString();
             NameTextBox.Text = NameTextBox.Tag.ToString();
             PatronymicTextBox.Text = PatronymicTextBox.Tag.ToString();
@@ -44,7 +43,7 @@ namespace App_grocery_store
             }
             else
             {
-                RoleComboBox.SelectedValue = 2; // Клиент по умолчанию
+                RoleComboBox.SelectedValue = 2;
             }
         }
 
@@ -85,7 +84,6 @@ namespace App_grocery_store
         {
             try
             {
-                // Проверяем, чтобы пользователь ввёл данные вместо подсказок
                 var surname = SurnameTextBox.Text == SurnameTextBox.Tag.ToString() ? string.Empty : SurnameTextBox.Text;
                 var name = NameTextBox.Text == NameTextBox.Tag.ToString() ? string.Empty : NameTextBox.Text;
                 var patronymic = PatronymicTextBox.Text == PatronymicTextBox.Tag.ToString() ? string.Empty : PatronymicTextBox.Text;

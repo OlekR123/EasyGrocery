@@ -14,7 +14,6 @@ namespace App_grocery_store
             InitializeComponent();
             _dbService = new DbService();
 
-            // Установим начальные подсказки
             EmailTextBox.Text = EmailTextBox.Tag.ToString();
             PasswordPlaceholder.Visibility = Visibility.Visible;
         }
@@ -56,7 +55,6 @@ namespace App_grocery_store
         {
             try
             {
-                // Проверяем, чтобы пользователь ввёл данные вместо подсказок
                 var email = EmailTextBox.Text == EmailTextBox.Tag.ToString() ? string.Empty : EmailTextBox.Text;
                 var password = PasswordBox.Password;
 
@@ -69,7 +67,7 @@ namespace App_grocery_store
 
                 MessageBox.Show($"Добро пожаловать, {user.name} {user.surname}!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                if (user.role_id == 1) // Администратор
+                if (user.role_id == 1)
                 {
                     var adminWindow = new AdminWindow(user);
                     adminWindow.Show();

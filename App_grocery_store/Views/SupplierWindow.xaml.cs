@@ -17,7 +17,6 @@ namespace App_grocery_store
             _dbService = dbService;
             _supplier = supplier;
 
-            // Установим начальные подсказки
             OrganizationNameTextBox.Text = OrganizationNameTextBox.Tag.ToString();
             AddressTextBox.Text = AddressTextBox.Tag.ToString();
             PhoneNumberTextBox.Text = PhoneNumberTextBox.Tag.ToString();
@@ -60,7 +59,6 @@ namespace App_grocery_store
         {
             try
             {
-                // Проверяем, чтобы пользователь ввёл данные вместо подсказок
                 var organizationName = OrganizationNameTextBox.Text == OrganizationNameTextBox.Tag.ToString() ? string.Empty : OrganizationNameTextBox.Text;
                 var address = AddressTextBox.Text == AddressTextBox.Tag.ToString() ? string.Empty : AddressTextBox.Text;
                 var phoneNumber = PhoneNumberTextBox.Text == PhoneNumberTextBox.Tag.ToString() ? string.Empty : PhoneNumberTextBox.Text;

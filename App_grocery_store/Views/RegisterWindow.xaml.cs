@@ -14,7 +14,6 @@ namespace App_grocery_store
             InitializeComponent();
             _dbService = new DbService();
 
-            // Установим начальные подсказки
             SurnameTextBox.Text = SurnameTextBox.Tag.ToString();
             NameTextBox.Text = NameTextBox.Tag.ToString();
             PatronymicTextBox.Text = PatronymicTextBox.Tag.ToString();
@@ -60,7 +59,6 @@ namespace App_grocery_store
         {
             try
             {
-                // Проверяем, чтобы пользователь ввёл данные вместо подсказок
                 var surname = SurnameTextBox.Text == SurnameTextBox.Tag.ToString() ? string.Empty : SurnameTextBox.Text;
                 var name = NameTextBox.Text == NameTextBox.Tag.ToString() ? string.Empty : NameTextBox.Text;
                 var patronymic = PatronymicTextBox.Text == PatronymicTextBox.Tag.ToString() ? string.Empty : PatronymicTextBox.Text;
@@ -74,7 +72,7 @@ namespace App_grocery_store
                     name = name,
                     patronymic = patronymic,
                     email = email,
-                    role_id = 2, // Клиент
+                    role_id = 2,
                     phone = phone
                 };
                 _dbService.RegisterUser(user, password);
